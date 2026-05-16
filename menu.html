@@ -16,8 +16,12 @@
     <header class="site-header">
         <div class="nav-container">
             <a href="index.html" class="logo">B.Bites</a>
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="hamburger" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </label>
             <nav>
-                <ul class="nav-links" id="navLinks">
+                <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="menu.html" class="active">Menu</a></li>
                     <li><a href="about.html">About Us</a></li>
@@ -25,9 +29,6 @@
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
-            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-                <span></span><span></span><span></span>
-            </button>
         </div>
     </header>
 
@@ -42,10 +43,10 @@
 
     <!-- ============ MENU TABS ============ -->
     <div class="menu-tabs">
-        <button class="tab-btn active" data-target="appetizers">Appetizers</button>
-        <button class="tab-btn" data-target="mains">Main Courses</button>
-        <button class="tab-btn" data-target="desserts">Desserts</button>
-        <button class="tab-btn" data-target="drinks">Drinks</button>
+        <a href="#appetizers" class="tab-btn">Appetizers</a>
+        <a href="#mains" class="tab-btn">Main Courses</a>
+        <a href="#desserts" class="tab-btn">Desserts</a>
+        <a href="#drinks" class="tab-btn">Drinks</a>
     </div>
 
     <!-- ============ MENU CONTENT ============ -->
@@ -289,24 +290,6 @@
             <p>&copy; 2026 B.Bites Restaurant. Built by Group 8.</p>
         </div>
     </footer>
-
-    <script>
-        // Hamburger
-        const hamburger = document.getElementById('hamburger');
-        const navLinks = document.getElementById('navLinks');
-        hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
-
-        // Tab filter — smooth scroll to category
-        const tabBtns = document.querySelectorAll('.tab-btn');
-        tabBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                tabBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                const target = document.getElementById(btn.dataset.target);
-                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            });
-        });
-    </script>
 
 </body>
 </html>
