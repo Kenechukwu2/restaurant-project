@@ -137,7 +137,11 @@ ul { list-style: none; }
 .nav-links a.active::after { width: 100%; }
 .nav-links a.active { color: var(--accent); }
 
-/* Hamburger */
+/* Hamburger (hidden on desktop, shown on mobile via media query) */
+.menu-toggle {
+    display: none;
+}
+
 .hamburger {
     display: none;
     flex-direction: column;
@@ -933,34 +937,18 @@ ul { list-style: none; }
     line-height: 1.8;
 }
 
-/* Filter Tabs */
-.filter-section { padding: 2rem 1rem 3rem; }
-
-.filter-tabs {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.filter-btn {
-    padding: 0.65rem 1.5rem;
-    background-color: transparent;
-    border: 2px solid var(--dark-green);
+/* Gallery Category Title (replaces filter tabs) */
+.gallery-category-title {
+    font-family: var(--heading-font);
+    font-size: 2rem;
     color: var(--dark-green);
-    font-family: var(--body-font);
-    font-size: 0.9rem;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: all var(--transition);
+    margin: 3rem auto 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid var(--accent);
+    max-width: 1300px;
+    padding-left: 2rem;
+    padding-right: 2rem;
 }
-
-.filter-btn:hover { background-color: var(--dark-green-90); color: var(--white); }
-.filter-btn.active { background-color: var(--dark-green); color: var(--white); }
 
 /* Gallery Grid */
 .gallery-section {
@@ -1020,8 +1008,6 @@ ul { list-style: none; }
 }
 
 .gallery-item:hover .gallery-overlay span { transform: translateY(0); }
-
-.gallery-item.hide { display: none; }
 
 /* Gallery CTA */
 .gallery-cta {
@@ -1353,15 +1339,11 @@ ul { list-style: none; }
         transition: max-height 0.4s ease, padding 0.4s ease;
     }
 
-   .menu-toggle {
-    display: none;
-}
-
-#menu-toggle:checked ~ nav .nav-links {
-    max-height: 400px;
-    padding: 1.5rem 0;
-    gap: 1.25rem;
-}
+    #menu-toggle:checked ~ nav .nav-links {
+        max-height: 400px;
+        padding: 1.5rem 0;
+        gap: 1.25rem;
+    }
 
     .hamburger { display: flex; }
 
@@ -1378,11 +1360,11 @@ ul { list-style: none; }
 
     .footer-socials { justify-content: center; }
 
-    .filter-btn { padding: 0.55rem 1.1rem; font-size: 0.8rem; }
-
     .form-row { grid-template-columns: 1fr; }
 
     .welcome-stats { gap: 1.5rem; }
 
     .submit-btn { width: 80%; }
+
+    .gallery-category-title { font-size: 1.5rem; padding-left: 1rem; padding-right: 1rem; }
 }
